@@ -50,7 +50,7 @@ public class UserRegistration {
 	public void passWord() {
 		System.out.println("Enter PassWord:");
 		String Pass1 = sc.next();
-		boolean valid = Pass1.matches("^[a-z]{8,}");
+		boolean valid = Pass1.matches("^[a-zA-Z]{8,}");
 		System.out.println("PassWord is:" + Pass1 + "\nvalid: " +valid);
 		System.out.println(valid);
 
