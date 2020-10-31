@@ -8,6 +8,7 @@ public class UserRegistration {
 		user.firstname();
 		user.lastname();
 		user.emailId();
+		user.MobileNo();
         }
 
 	public boolean firstname() {
@@ -33,6 +34,15 @@ public class UserRegistration {
 		boolean valid = email.matches( "^[a-zA-Z0-9+_.-]+@(.+)$");
 		System.out.println("email Id is:" + email + "\nvalid: " + valid);
 		return valid;
+	}
+
+	//Function for MobileNo validation
+	public void MobileNo() {
+		System.out.println("Enter MobileNo :");
+		String MobileNo = sc.next();
+		boolean valid = MobileNo.matches( "^(\\d{2})\\-([6-9]{1}\\d{9})$" );
+		System.out.println("MobileNo is:" + MobileNo + "\nvalid: " + valid);
+		System.out.println(valid);
 	}
 }
 
