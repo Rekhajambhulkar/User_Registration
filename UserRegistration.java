@@ -9,6 +9,7 @@ public class UserRegistration {
 		user.lastname();
 		user.emailId();
 		user.MobileNo();
+		user.passWord();
         }
 
 	public boolean firstname() {
@@ -44,5 +45,14 @@ public class UserRegistration {
 		System.out.println("MobileNo is:" + MobileNo + "\nvalid: " + valid);
 		System.out.println(valid);
 	}
-}
 
+	//Function for Password validation
+	public void passWord() {
+		System.out.println("Enter PassWord:");
+		String Pass1 = sc.next();
+		boolean valid = Pass1.matches("^[a-z]{8,}");
+		System.out.println("PassWord is:" + Pass1 + "\nvalid: " +valid);
+		System.out.println(valid);
+
+	}
+}
