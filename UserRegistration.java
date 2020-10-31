@@ -7,6 +7,7 @@ public class UserRegistration {
 		UserRegistration user = new UserRegistration();
 		user.firstname();
 		user.lastname();
+		user.emailId();
         }
 
 	public boolean firstname() {
@@ -23,6 +24,14 @@ public class UserRegistration {
 		String name = sc.next();
 		boolean valid = name.matches("^[A-Z][a-z]{3,}");
 		System.out.println("Last Name is:" + name + "\nvalid: " + valid);
+		return valid;
+	}
+
+	public boolean emailId() {
+		System.out.println("Enter EmailId:");
+		String email = sc.next();
+		boolean valid = email.matches( "^[a-zA-Z0-9+_.-]+@(.+)$");
+		System.out.println("email Id is:" + email + "\nvalid: " + valid);
 		return valid;
 	}
 }
