@@ -1,6 +1,8 @@
 package com.bridgelabz.userregistration;
 
 public class UserRegistration {
+	static Scanner sc = new Scanner(System.in);
+	ArrayList<String> emails = new ArrayList<String>();
 
         public static void main(String[] args) {
                 System.out.println("Welcome in User Registration program");
@@ -30,11 +32,24 @@ public class UserRegistration {
 	}
 
 	public boolean emailId() {
-		System.out.println("Enter EmailId:");
-		String email = sc.next();
-		boolean valid = email.matches( "^[a-zA-Z0-9+_.-]+@(.+)$");
-		System.out.println("email Id is:" + email + "\nvalid: " + valid);
-		return valid;
+		System.out.println("\nEmail validation Samples");
+		emails.add("abc@abc.com");
+		emails.add("abc-100@abc.co.in");
+		emails.add("abc111@abc.com");
+		emails.add("abc.yz@abc.com.com");
+		emails.add("abc#@abc.co.in");
+		emails.add("abc@abc.com.com");
+		
+		String regex = "^(.+)@(.+)$";
+		 
+		Pattern pattern = Pattern.compile(regex);
+		 
+		for(String  email : emails){
+		    Matcher matcher = pattern.matcher(email);
+		    System.out.println(email +" : "+ matcher.matches());
+		}
+		return regex;
+	}
 	}
 
 	//Function for MobileNo validation
